@@ -6,9 +6,13 @@ RSpec.describe StringCalculator do
       expect(AddStringCalculator.new("").call).to eq(0)
     end
 
+    it "returns the number itself if only one number is provided" do
+      expect(AddStringCalculator.new("5").call).to eq(5)
+    end
 
-  it "returns the number itself if only one number is provided" do
-    expect(AddStringCalculator.new("5").call).to eq(5)
-  end
+    it "returns the sum of two comma separated numbers" do
+      expect(AddStringCalculator.new("1,2").call).to eq(3)
+    end
+
   end
 end
