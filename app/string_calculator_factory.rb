@@ -1,3 +1,5 @@
+require 'byebug'
+
 class StringCalculatorFactory
   def initialize(input)
     @input = input
@@ -11,12 +13,7 @@ class StringCalculatorFactory
 
   def string_sanitizer(input)
     return [] if input.empty?
-
-    if input.match?(/^\d+$/)
-        [input.to_i]
-    else
-        input.split(",").map(&:to_i)
-    end
+    input.split(/,|\n/).map(&:to_i)
   end
 
   def create_calculator(_numbers)
