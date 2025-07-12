@@ -45,6 +45,15 @@ RSpec.describe StringCalculator do
     it "supports multiple delimiters of any length" do
       expect(AddStringCalculator.new("//[*][%]\n1*2%3").call).to eq(6)
     end
+
+
+    # the following input is NOT ok: “1,\n” (not need to prove it - just clarifying)
+    it "when input is invalid" do
+      expect {
+        AddStringCalculator.new("1,\n").call
+      }.to raise_error("Input in wrong format 1,\n")
+    end
+
   end
 end
 

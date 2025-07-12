@@ -12,7 +12,11 @@ class StringCalculatorFactory
     end
 
     def string_sanitizer(input)
+        original_input = input
         return [] if input.empty?
+
+         # the following input is NOT ok: “1,\n” (not need to prove it - just clarifying)
+        raise "Input in wrong format #{original_input}" if input =~ /,\n|\n,/
 
         sanatized_numbers = input.scan(/-?\d+/).map(&:to_i)
         
