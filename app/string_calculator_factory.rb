@@ -13,7 +13,12 @@ class StringCalculatorFactory
 
   def string_sanitizer(input)
     return [] if input.empty?
-    input.split(/,|\n/).map(&:to_i)
+    if input.start_with?("//")
+        delimiter, numbers = input.match(%r{//(.)\n(.*)}).captures
+        numbers.split(/#{Regexp.escape(delimiter)}/).map(&:to_i)
+    else
+        input.split(/,|\n/).map(&:to_i)
+    end
   end
 
   def create_calculator(_numbers)
