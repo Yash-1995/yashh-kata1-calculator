@@ -21,5 +21,9 @@ RSpec.describe StringCalculator do
     it "allows newlines between numbers" do
       expect(AddStringCalculator.new("1\n2,3").call).to eq(6)
     end
+
+    it "supports custom delimiter using //;\\n format" do
+      expect(AddStringCalculator.new("//;\n1;2").call).to eq(3)
+    end
   end
 end
