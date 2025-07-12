@@ -31,5 +31,11 @@ RSpec.describe StringCalculator do
         AddStringCalculator.new("1,-2,3,-5").call
       }.to raise_error("Negative Numbers are not allowed. You have passed negative numbers: -2,-5")
     end
+
+    it "raises exception on passing negative numbers" do
+      expect(AddStringCalculator.new("10001, 2").call).to eq(2)
+    end
   end
 end
+
+ 
