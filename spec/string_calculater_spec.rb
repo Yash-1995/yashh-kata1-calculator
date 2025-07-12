@@ -1,4 +1,4 @@
-require_relative '../string_calculator'
+require_relative '../app/string_calculator'
 
 RSpec.describe StringCalculator do
   describe '#add' do
