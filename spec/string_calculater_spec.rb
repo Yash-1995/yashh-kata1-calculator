@@ -14,5 +14,8 @@ RSpec.describe StringCalculator do
       expect(AddStringCalculator.new("1,2").call).to eq(3)
     end
 
+    it "returns the sum of any amount of comma separated numbers" do
+      expect(AddStringCalculator.new("1,2,3,4").call).to eq(10)
+    end
   end
 end
