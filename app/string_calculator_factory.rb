@@ -15,7 +15,7 @@ class StringCalculatorFactory
     if input.match?(/^\d+$/)
         [input.to_i]
     else
-        []
+        input.split(",").map(&:to_i)
     end
   end
 
