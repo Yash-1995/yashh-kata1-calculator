@@ -35,6 +35,12 @@ RSpec.describe StringCalculator do
     it "raises exception on passing negative numbers" do
       expect(AddStringCalculator.new("10001, 2").call).to eq(2)
     end
+    
+    # # Support for special delimeters
+
+    it "supports delimiters of any length" do
+      expect(AddStringCalculator.new("//[***]\n1***2***3").call).to eq(6)
+    end
   end
 end
 
