@@ -20,7 +20,8 @@ class StringCalculatorFactory
             input.split(/,|\n/).map(&:to_i)
         end
         raise_error_if_found_negative_numbers(get_negative_numbers(sanatized_numbers))
-        sanatized_numbers
+        
+        sanatized_numbers.select{ _1 <= 1000 }
     end
 
     def create_calculator(_numbers)
