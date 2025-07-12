@@ -7,8 +7,8 @@ RSpec.describe StringCalculator do
     end
 
 
-it "returns the number itself if only one number is provided" do
-  expect(AddStringCalculator.new("5").call).to eq(5)
-end
+  it "returns the number itself if only one number is provided" do
+    expect(AddStringCalculator.new("5").call).to eq(5)
+  end
   end
 end

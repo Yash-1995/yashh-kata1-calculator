@@ -10,7 +10,13 @@ class StringCalculatorFactory
   end
 
   def string_sanitizer(input)
-    return nil if input.empty?
+    return [] if input.empty?
+
+    if input.match?(/^\d+$/)
+        [input.to_i]
+    else
+        []
+    end
   end
 
   def create_calculator(_numbers)
