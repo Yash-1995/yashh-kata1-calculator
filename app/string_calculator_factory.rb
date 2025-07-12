@@ -23,17 +23,6 @@ class StringCalculatorFactory
         sanatized_numbers
     end
 
-    # We can move this logic to add string calculator as well if we are going to add another calculator but with different cases
-    def get_negative_numbers(sanatized_numbers)
-        sanatized_numbers.select{ _1.negative? }
-    end
-
-    def raise_error_if_found_negative_numbers(negative_numbers)
-        if negative_numbers.any?
-            raise "Negative Numbers are not allowed. You have passed negative numbers: #{negative_numbers.join(",")}"
-        end
-    end
-
     def create_calculator(_numbers)
         raise NotImplementedError
     end
